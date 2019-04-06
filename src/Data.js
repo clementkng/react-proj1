@@ -20,21 +20,21 @@ const ProductData = {
             cost: 5.0,
             stock: 0
         },
-        {
-            name: "Blueberries",
-            cost: 1.0,
-            stock: 12
-        },
-        {
-            name: "Blackberries",
-            cost: 1,
-            stock: 3
-        },
-        {
-            name: "Lingonberries",
-            cost: 2,
-            stock: 4
-        },
+        // {
+        //     name: "Blueberries",
+        //     cost: 1.0,
+        //     stock: 12
+        // },
+        // {
+        //     name: "Blackberries",
+        //     cost: 1,
+        //     stock: 3
+        // },
+        // {
+        //     name: "Lingonberries",
+        //     cost: 2,
+        //     stock: 4
+        // },
     ]
 }
 

@@ -4,34 +4,8 @@ import React from "react";
 class Product extends React.Component {
 	// this.props.limit as well
   constructor (props) {
-    super(props)
-    
-    this.state = {
-      clicked: 1,
-    };
+    super(props);
 
-    this.addToCart = this.addToCart.bind(this);
-  }
-  // What argument needs to go in here?
-  addToCart (limit) {
-    // if (parseInt(this.props.limit) === 0) {
-    //   alert("This item is out of stock!");
-    // } else if (parseInt(this.props.limit) <= clicked) {
-    //   alert("There are too many Apples in your cart!");
-    // } else {
-    //   clicked += 1;
-    //   alert(`There are ${clicked} ${this.props.productName} in your cart!`);
-    // }
-    if (parseInt(this.props.limit) === 0) {
-      alert("This item is out of stock!");
-    } else if (this.props.limit < this.state.clicked) {
-      alert(`There are too many ${this.props.productName} in your cart!`);
-    } else {
-      this.setState((state) => ({
-        clicked : state.clicked + 1
-      }));  
-      alert(`There are ${this.state.clicked} ${this.props.productName} in your cart!`);
-    }
   }
 	render () {
 		return (
@@ -44,10 +18,15 @@ class Product extends React.Component {
 			      </div>
 			    </div>
 			    <div class="ui bottom attached button" 
-            onClick={() => this.addToCart(this.props.limit)}>
+            onClick={() => {this.props.onAddToCart(this.props.productName, this.props.price)}}>
 			      <i class="add icon"></i>
 			      Add To Cart
 			    </div>
+          <div class="ui bottom attached button" 
+            onClick={() => {this.props.onRemoveFromCart(this.props.productName)}}>
+            <i class="remove icon"></i>
+            Remove From Cart
+          </div>
 			  </div>
 			</div>
 		)
